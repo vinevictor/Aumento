@@ -1,10 +1,13 @@
 // // Lista de Exercicio - Aumento
 var nome, salario, porcentagemAumento, salarioComAumento;
 
-PegaNomeSalario();
-CalculoAumento();
-console.log("Olá " + nome + " seu salario aualmente é de R$" + salario.toFixed(2) + " E com o aumento de " + porcentagemAumento + "% seu salario sera de R$" + salarioComAumento.toFixed(2))
-
+var repeat = true;
+while (repeat) {
+    PegaNomeSalario();
+    CalculoAumento();
+    console.log("Olá " + nome + " seu salario aualmente é de R$" + salario.toFixed(2) + " E com o aumento de " + porcentagemAumento + "% seu salario sera de R$" + salarioComAumento.toFixed(2))
+    DesejaContinuar();
+};
 function PegaNomeSalario() {
     nome = prompt("Informe seu Nome:");
     salario = parseInt(prompt("Informe o Salario:"));
@@ -31,6 +34,17 @@ function CalculoAumento() {
         salarioComAumento = salario * 1.05;
     };
     return salarioComAumento;
+
+}
+
+function DesejaContinuar(continuar) {
+    continuar = prompt("Deseja calcular novamente com novas Informações? S/N")
+    if (continuar == "n" || continuar == "N") {
+        repeat = false;
+
+    } else {
+        console.clear();
+    }
 
 }
 
